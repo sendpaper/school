@@ -1,0 +1,73 @@
+<h1>Lost and found page because we cant find shit (we  are out of business)</h1>
+
+<h2>all lost items</h2>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Catagory</th>
+        <th>Date</th>
+    </tr>
+
+    {% for lostitem in all_lostitems %}
+        <tr>
+            <td><a href="{% url 'detail' lostitem.id %}">{{ lostitem.title }}</a></td>
+            <td>{{ lostitem.catagory }}</td>
+            <td>{{ lostitem.date }}</td>
+        </tr>
+    {% endfor %}
+    
+</table>
+
+<h2>all found items</h2>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Catagory</th>
+        <th>Date</th>
+    </tr>
+
+    {% for founditem in all_founditems %}
+        <tr>
+            <td><a href="{% url 'detail_2' founditem.id %}">{{ founditem.title }}</a></td>
+            <td>{{ founditem.catagory }}</td>
+            <td>{{ founditem.date }}</td>
+        </tr>
+    {% endfor %}
+    
+</table>
+
+<h2>hop card lmao</h2>
+<table>
+    <tr>
+        <th>Date</th>
+        <th>Catagory</th>
+        <th>Title</th>
+    </tr>
+
+    {% for lostitem in lostitems_hopcard %}
+        <tr>
+            <td><a href="{% url 'detail' lostitem.id %}">{{ lostitem.title }}</a></td>
+            <td>{{ lostitem.catagory }}</td>
+            <td>{{ lostitem.date }}</td>
+        </tr>
+    {% endfor %}
+    
+</table>
+
+<h2>who messed up today?</h2>
+<table>
+    <tr>
+        <th>Date</th>
+        <th>Catagory</th>
+        <th>Title</th>
+    </tr>
+
+    {% for lostitem in relevant_lostitems %}
+        <tr>
+            <td><a href="{% url 'detail' lostitem.id %}">{{ lostitem.title }}</a></td>
+            <td>{{ lostitem.catagory }}</td>
+            <td>{{ lostitem.date }}</td>
+        </tr>
+    {% endfor %}
+    
+</table>

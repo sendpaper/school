@@ -1,0 +1,27 @@
+<h1>SEARCH FOR YOUR LIFE</h1>
+
+<form action="" method="GET">
+
+    <input type text="text" name = "q">
+
+    <input type="submit" value="Search">
+
+</form>
+
+<h2>results</h2>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Catagory</th>
+        <th>Date</th>
+    </tr>
+
+    {% for lostitem in all_lostitems %}
+        <tr>
+            <td><a href="{% url 'detail' lostitem.id %}">{{ lostitem.title }}</a></td>
+            <td>{{ lostitem.catagory }}</td>
+            <td>{{ lostitem.date }}</td>
+        </tr>
+    {% endfor %}
+    
+</table>
