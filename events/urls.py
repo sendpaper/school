@@ -18,7 +18,7 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name = 'index'),
-    path('lost<int:lostitem_id>/', views.detail, name = 'detail'),
-    path('found<int:founditem_id>/', views.detail_2, name = 'detail_2'),
+    path('lost_<int:lostitem_id>/', views.detail, name = 'detail'),
+    path('found_<int:founditem_id>/', views.detail_2, name = 'detail_2'),
     path('search/', views.search, name = 'search')
 ]
