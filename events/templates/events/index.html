@@ -51,7 +51,7 @@
                 </thead>
 
                 <tbody>
-                    {% for founditem in relevant_founditems %}
+                    {% for founditem in founditems_today %}
                         <tr>
                             <td><a href="{% url 'detail_2' founditem.id %}">{{ founditem.title }}</a></td>
                             <td>{{ founditem.catagory }}</td>
