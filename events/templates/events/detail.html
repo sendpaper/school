@@ -9,20 +9,19 @@
     <title>Lost Item</title>
 </head>
 
-<body style="font-family: monospace; margin: 0 3%;">
-    <h1 class="text-center" style="margin: 25px 0;">Item Page</h1>
+<body style="font-family: monospace; margin: 10px 5%; display: flex; justify-content: center; flex-direction: column;">
+    <h1 class="text-center" style="margin: 25px 0;">Lost Item Page</h1>
     
-    <a>Return to Main Page :3c ((oh wait this also doesn't work lmao))</a>
+    <a href="http://127.0.0.1:8000/index/">Return to Main Page :3c</a>
 
     <div class="p-3 mb-2 bg-light text-dark" style="margin: 30px 20%; border: 1px solid;">
-        <div style="display: flex; justify-content: space-between;">
+        <div style="display: flex; justify-content: space-between; margin-top: 20px;">
             <h2>{{ lostitem.title }}</h2>
             <h2>{{ lostitem.date }}</h2>
         </div>  
 
-        <h4>Catagory: {{ lostitem.catagory }}</h4>
+        <h5 class="text-end">Catagory: {{ lostitem.catagory }}</h5>
 
-        <p style="margin: 20px 0;">{{ lostitem.details }}</p>
+        <p style="margin: 35px 0 20px 0;">{{ lostitem.details }}</p>
 
-    </div>
 </body>

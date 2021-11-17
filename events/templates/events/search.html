@@ -9,10 +9,10 @@
     <title>Lost Items Search Page</title>
 </head>
 
-<body style="font-family: monospace; margin: 0 3%;">
+<body style="font-family: monospace; margin: 10px 5%; display: flex; justify-content: center; flex-direction: column;">
     <h1 class="text-center" style="margin: 25px 0;">Lost Items Search Page</h1>
 
-    <a>Return to Main Page :D ((currently not working))</a>
+    <a href="http://127.0.0.1:8000/index/">Return to Main Page :D</a>
 
     <form action="" method="GET" style="margin: 10px 0;">
 
@@ -22,25 +22,54 @@
 
     </form>
 
-    <h2 style="margin: 30px 0 0 5%;">Results</h2>
-    <table class="table table-hover" style="margin: 0 2%; width: 90%; border: 1px solid;">
-        <thead class="table-dark">
-            <tr>
-                <th scope="col">Title</th>
-                <th scope="col">Catagory</th>
-                <th scope="col">Date</th>
-            </tr>
-        </thead>
+    <div style="margin: 50px 5% 30px 5%; display: flex; justify-content: space-between;">
+        <div style="width: 46%;">
+            <h2 style="margin-left: 5%;">Today's Lost Items</h2>
+            <table class="table table-hover" style="border: 1px solid;">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Title</th>
+                        <th>Catagory</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
 
-        <tbody>
-            {% for lostitem in relevant_lostitems %}
-                <tr>
-                    <td><a href="{% url 'detail' lostitem.id %}">{{ lostitem.title }}</a></td>
-                    <td>{{ lostitem.catagory }}</td>
-                    <td>{{ lostitem.date }}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
+                <tbody>
+                    {% for lostitem in relevant_lostitems %}
+                        <tr>
+                            <td><a href="{% url 'detail' lostitem.id %}">{{ lostitem.title }}</a></td>
+                            <td>{{ lostitem.catagory }}</td>
+                            <td>{{ lostitem.date }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+                
+            </table>
+        </div>
         
-    </table>
+        <div style="width: 46%;">
+            <h2 style="margin-left: 5%;">Today's Found Items</h2>
+            <table class="table table-hover" style="border: 1px solid;">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Title</th>
+                        <th>Catagory</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for founditem in relevant_founditems %}
+                        <tr>
+                            <td><a href="{% url 'detail' founditem.id %}">{{ founditem.title }}</a></td>
+                            <td>{{ founditem.catagory }}</td>
+                            <td>{{ founditem.date }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+                
+            </table>
+        </div>
+    </div>
+
 </body>

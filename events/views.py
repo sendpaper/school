@@ -25,7 +25,6 @@ def detail(request, lostitem_id):
 
     lostitem = get_object_or_404(LostItem, pk=lostitem_id)
 
-
     context = {'lostitem':lostitem}
 
     return render(request, 'events/detail.html', context)
@@ -34,7 +33,6 @@ def detail(request, lostitem_id):
 def detail_2(request, founditem_id):
 
     founditem = get_object_or_404(FoundItem, pk=founditem_id) 
-
 
     context = {'founditem':founditem}
 
